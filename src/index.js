@@ -33,7 +33,11 @@ registerBlockType("gm18-gutenberg-price-list/price-list", {
                     />
                 </h1>
                 {/* Want to do allowedBlocks={ [] }, but that seems buggy - https://github.com/WordPress/gutenberg/issues/7763 */}
-                <InnerBlocks />
+                <InnerBlocks template={[
+                    [ 'gm18-gutenberg-price-list/price-list-category' ],
+                    [ 'gm18-gutenberg-price-list/price-list-category' ],
+                    [ 'gm18-gutenberg-price-list/price-list-category' ],
+                ]} />
             </section>
         );
     },
