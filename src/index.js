@@ -10,20 +10,20 @@ registerBlockType("gm18-gutenberg-price-list/price-list", {
 
     edit() {
         return (
-            <React.Fragment>
+            <section>
                 <h1>TODO: Price List edit markup goes here</h1>
                 {/* Want to do allowedBlocks={ [] }, but that seems buggy - https://github.com/WordPress/gutenberg/issues/7763 */}
                 <InnerBlocks />
-            </React.Fragment>
+            </section>
         );
     },
 
     save() {
         return (
-            <React.Fragment>
+            <section>
                 <h1>TODO: Price List save markup goes here</h1>
                 <InnerBlocks.Content />
-            </React.Fragment>
+            </section>
         );
     }
 });

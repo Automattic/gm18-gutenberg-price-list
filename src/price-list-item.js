@@ -10,13 +10,13 @@ registerBlockType("gm18-gutenberg-price-list/price-list-item", {
 
     edit() {
         return (
-            <p>TODO: Item edit markup goes here</p>
+            <li>TODO: Item edit markup goes here</li>
         );
     },
 
     save() {
         return (
-            <p>TODO: Item save markup goes here</p>
+            <li>TODO: Item save markup goes here</li>
         );
     }
 });
