@@ -1,30 +1,6 @@
 const {createElement} = wp.element;
 const {registerBlockType} = wp.blocks;
-const {InnerBlocks} = wp.editor;
-const {TextControl} = wp.components;
-
-function renderFrontEndTitle( props ) {
-    return (
-        <h1>{ props.attributes.name }</h1>
-    );
-}
-
-function renderEditorTitle( props ) {
-    function updateNameAttribute( newValue ) {
-        props.setAttributes({
-            name: newValue,
-        });
-    }
-
-    return (
-        <h1>
-            <TextControl
-                value={ props.attributes.name }
-                onChange={ updateNameAttribute }
-            />
-        </h1>
-    );
-}
+const {InnerBlocks, RichText} = wp.editor;
 
 registerBlockType( "gm18-gutenberg-price-list/price-list", {
     title: "Price List",
@@ -41,12 +17,22 @@ registerBlockType( "gm18-gutenberg-price-list/price-list", {
     },
 
     edit( props ) {
+        function updateNameAttribute( newValue ) {
+            props.setAttributes({
+                name: newValue,
+            });
+        }
+
         return (
             <section>
-                { props.isSelected
-                    ? renderEditorTitle( props )
-                    : renderFrontEndTitle( props )
-                }
+                <h1>
+                    <RichText
+                        value={ props.attributes.name }
+                        placeholder={ 'Price List Name' }
+                        formattingControls={ [] }
+                        onChange={ updateNameAttribute }
+                    />
+                </h1>
                 {/* Want to do allowedBlocks={ [] }, but that seems buggy - https://github.com/WordPress/gutenberg/issues/7763 */}
                 <InnerBlocks template={[
                     [ 'gm18-gutenberg-price-list/price-list-category' ],
@@ -60,7 +46,11 @@ registerBlockType( "gm18-gutenberg-price-list/price-list", {
     save( props ) {
         return (
             <section>
-                { renderFrontEndTitle( props ) }
+                <h1>
+                    <RichText.Content
+                        value={ props.attributes.name }
+                    />
+                </h1>
                 <InnerBlocks.Content />
             </section>
         );
