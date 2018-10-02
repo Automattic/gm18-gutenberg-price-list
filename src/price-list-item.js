@@ -81,11 +81,13 @@ registerBlockType( "gm18-gutenberg-price-list/price-list-item", {
     save( { attributes } ) {
 		return (
 			<li className="menu-item">
-				<strong className="menu-item-name">
-					<RichText.Content value={ attributes.name } />
-				</strong>
-				<span className="menu-item-price">
-					<RichText.Content value={ attributes.price } />
+				<span className="menu-item-header">
+					<strong className="menu-item-name">
+						<RichText.Content value={ attributes.name } />
+					</strong>
+					<span className="menu-item-price">
+						<RichText.Content value={ attributes.price } />
+					</span>
 				</span>
 				<span className="menu-item-description">
 					<RichText.Content value={ attributes.description } />
