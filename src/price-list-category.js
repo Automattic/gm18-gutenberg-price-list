@@ -1,5 +1,6 @@
 const {createElement} = wp.element;
 const {registerBlockType} = wp.blocks;
+const {InnerBlocks} = wp.editor;
 
 registerBlockType("gm18-gutenberg-price-list/price-list-category", {
     title: "Price List Category",
@@ -10,13 +11,19 @@ registerBlockType("gm18-gutenberg-price-list/price-list-category", {
 
     edit() {
         return (
-            <p>TODO: Category edit markup goes here</p>
+            <React.Fragment>
+                <p>TODO: Category edit markup goes here</p>
+                <InnerBlocks />
+            </React.Fragment>
         );
     },
 
     save() {
         return (
-            <p>TODO: Category save markup goes here</p>
+            <React.Fragment>
+                <p>TODO: Category save markup goes here</p>
+                <InnerBlocks.Content />
+            </React.Fragment>
         );
     }
 });
