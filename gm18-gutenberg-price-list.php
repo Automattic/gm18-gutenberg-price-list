@@ -31,11 +31,21 @@ function gm18_gutenberg_price_list_register_block() {
 	wp_register_script(
 		'gm18-gutenberg-price-list',
 		gm18_gutenberg_price_list_url( 'dist/index.js' ),
-		array( 'wp-element', 'wp-blocks' )
+		array( 'wp-element', 'wp-blocks', 'wp-editor' )
 	);
 
 	register_block_type( 'gm18-gutenberg-price-list/price-list', array(
 			'editor_script' => 'gm18-gutenberg-price-list',
+	) );
+
+	wp_register_script(
+		'gm18-gutenberg-price-list-category',
+		gm18_gutenberg_price_list_url( 'dist/price-list-category.js' ),
+		array( 'wp-element', 'wp-blocks' )
+	);
+
+	register_block_type( 'gm18-gutenberg-price-list/price-list-category', array(
+		'editor_script' => 'gm18-gutenberg-price-list-category',
 	) );
 }
 

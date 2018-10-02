@@ -5,8 +5,8 @@
   "main": "src/index.js",
   "private": true,
   "scripts": {
-    "start": "parcel watch src/index.js",
-    "build": "parcel build src/index.js"
+    "start": "parcel watch src/*.js",
+    "build": "parcel build src/*.js"
   },
   "keywords": [
     "wordpress",
