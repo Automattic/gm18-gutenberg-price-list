@@ -1,8 +1,9 @@
 const { createElement, Fragment } = wp.element;
+const { RichText } = wp.editor;
 const { registerBlockType } = wp.blocks;
 const { TextControl } = wp.components;
 
-//import './price-list-item.scss';
+import './price-list-item.scss';
 
 registerBlockType( "gm18-gutenberg-price-list/price-list-item", {
     title: "Price List Item",
@@ -44,49 +45,47 @@ registerBlockType( "gm18-gutenberg-price-list/price-list-item", {
 
         return (
             <li className="menu-item">
-				{ isSelected && (
-					<Fragment>
-						<TextControl
-							label="Item Name"
-							value={ attributes.name }
-							onChange={ updatePriceListItemName }
-						/>
-						<TextControl
-							label="Item Description"
-							value={ attributes.description }
-							onChange={ updatePriceListItemDescription }
-						/>
-						<TextControl
-							label="Item Price"
-							value={ attributes.price }
-							onChange={ updatePriceListItemPrice }
-						/>
-					</Fragment>
-				) }
-				{ ! isSelected && (
-					<Fragment>
-						<strong className="menu-item-name">
-							{ attributes.name }
-						</strong>
-						<span className="menu-item-description">
-							{ attributes.description }
-						</span>
-						<span className="menu-item-price">
-							{ attributes.price }
-						</span>
-					</Fragment>
-				) }
+				<strong className="menu-item-name">
+					<RichText
+						value={ attributes.name }
+						placeholder={ 'Item Name' }
+						formattingControls={ [] }
+						onChange={ updatePriceListItemName }
+					/>
+				</strong>
+				<span className="menu-item-price">
+					<RichText
+						value={ attributes.price }
+						placeholder={ '2.00' }
+						formattingControls={ [] }
+						onChange={ updatePriceListItemPrice }
+					/>
+				</span>
+				<span className="menu-item-description">
+					<RichText
+						value={ attributes.description }
+						placeholder={ 'Item Description' }
+						formattingControls={ [] }
+						onChange={ updatePriceListItemDescription }
+					/>
+				</span>
             </li>
         );
     },
 
     save( { attributes } ) {
-        return (
-            <li className="menu-item">
-				<strong className="menu-item-name">{ attributes.name }</strong>
-				<span className="menu-item-description">{ attributes.description }</span>
-				<span className="menu-item-price">{ attributes.price }</span>
+		return (
+			<li className="menu-item">
+				<strong className="menu-item-name">
+					<RichText.Content value={ attributes.name } />
+				</strong>
+				<span className="menu-item-price">
+					<RichText.Content value={ attributes.price } />
+				</span>
+				<span className="menu-item-description">
+					<RichText.Content value={ attributes.description } />
+				</span>
 			</li>
-        );
-    }
-});
+		);
+    },
+} );

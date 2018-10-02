@@ -60,11 +60,16 @@ function gm18_gutenberg_price_list_register_block() {
 	wp_register_script(
 		'gm18-gutenberg-price-list-item',
 		gm18_gutenberg_price_list_url( 'dist/price-list-item.js' ),
-		array( 'wp-element', 'wp-blocks' )
+		array( 'wp-element', 'wp-blocks', 'wp-editor' )
+	);
+	wp_register_style(
+		'gm18-gutenberg-price-list-item',
+		gm18_gutenberg_price_list_url( 'dist/price-list-item.css' )
 	);
 
 	register_block_type( 'gm18-gutenberg-price-list/price-list-item', array(
 		'editor_script' => 'gm18-gutenberg-price-list-item',
+		'style' => 'gm18-gutenberg-price-list-item',
 	) );
 }
 
