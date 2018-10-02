@@ -10,7 +10,6 @@ registerBlockType( "gm18-gutenberg-price-list/price-list", {
     attributes: {
         name: {
             type: 'string',
-            default: 'My Price List',
             source: 'children',
             selector: 'h1',
         }
@@ -28,7 +27,8 @@ registerBlockType( "gm18-gutenberg-price-list/price-list", {
                 <h1>
                     <RichText
                         value={ props.attributes.name }
-                        placeholder={ 'Price List Name' }
+                        placeholder={ 'My Price List' }
+                        keepPlaceholderOnFocus={ true }
                         formattingControls={ [] }
                         onChange={ updateNameAttribute }
                     />
