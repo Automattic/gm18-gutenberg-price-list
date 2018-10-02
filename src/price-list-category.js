@@ -13,7 +13,7 @@ registerBlockType("gm18-gutenberg-price-list/price-list-category", {
         return (
             <React.Fragment>
                 <p>TODO: Category edit markup goes here</p>
-                {/* Want to do allowedBlocks={ [] }, but that seems buggy */}
+                {/* Want to do allowedBlocks={ [] }, but that seems buggy - https://github.com/WordPress/gutenberg/issues/7763 */}
                 <InnerBlocks />
             </React.Fragment>
         );
