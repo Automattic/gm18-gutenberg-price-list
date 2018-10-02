@@ -47,7 +47,7 @@ function gm18_gutenberg_price_list_register_block() {
 	wp_register_script(
 		'gm18-gutenberg-price-list-category',
 		gm18_gutenberg_price_list_url( 'dist/price-list-category.js' ),
-		array( 'wp-element', 'wp-blocks', 'wp-editor' )
+		array( 'wp-element', 'wp-blocks', 'wp-editor', 'wp-components' )
 	);
 
 	register_block_type( 'gm18-gutenberg-price-list/price-list-category', array(
