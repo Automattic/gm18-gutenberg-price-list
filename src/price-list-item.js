@@ -24,7 +24,7 @@ registerBlockType( "gm18-gutenberg-price-list/price-list-item", {
 		}
 	},
 
-    edit( { setAttributes, attributes, isSelected } ) {
+    edit( { setAttributes, attributes } ) {
 		function updatePriceListItemName( newValue ) {
 			setAttributes( {
 				name: newValue
@@ -45,26 +45,31 @@ registerBlockType( "gm18-gutenberg-price-list/price-list-item", {
 
         return (
             <li className="menu-item">
-				<strong className="menu-item-name">
-					<RichText
-						value={ attributes.name }
-						placeholder={ 'Item Name' }
-						formattingControls={ [] }
-						onChange={ updatePriceListItemName }
-					/>
-				</strong>
-				<span className="menu-item-price">
-					<RichText
-						value={ attributes.price }
-						placeholder={ '2.00' }
-						formattingControls={ [] }
-						onChange={ updatePriceListItemPrice }
-					/>
+				<span className="menu-item-header">
+					<strong className="menu-item-name">
+						<RichText
+							value={ attributes.name }
+							placeholder={ 'Item Name' }
+							keepPlaceholderOnFocus={ true }
+							formattingControls={ [] }
+							onChange={ updatePriceListItemName }
+						/>
+					</strong>
+					<span className="menu-item-price">
+						<RichText
+							value={ attributes.price }
+							placeholder={ '2.00' }
+							keepPlaceholderOnFocus={ true }
+							formattingControls={ [] }
+							onChange={ updatePriceListItemPrice }
+						/>
+					</span>
 				</span>
 				<span className="menu-item-description">
 					<RichText
 						value={ attributes.description }
 						placeholder={ 'Item Description' }
+						keepPlaceholderOnFocus={ true }
 						formattingControls={ [] }
 						onChange={ updatePriceListItemDescription }
 					/>
