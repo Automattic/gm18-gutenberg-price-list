@@ -11,9 +11,9 @@ registerBlockType("gm18-gutenberg-price-list/price-list-category", {
 
     edit() {
         return (
-            <section>
+            <section className="menu-section">
                 <header>
-                    <h2>TODO: Category Name edit markup goes here</h2>
+                    <h3>TODO: Category Name edit markup goes here</h3>
                     <p>Category description goes here</p>
                 </header>
                 {/* Want to do allowedBlocks={ [] }, but that seems buggy - https://github.com/WordPress/gutenberg/issues/7763 */}
