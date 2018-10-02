@@ -1,10 +1,22 @@
 .menu-item {
 	list-style: none;
 }
+.menu-item-header {
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+}
 .menu-item-name {
+	//border: 1px solid blue;
+	display: block;
 }
 .menu-item-price {
+	//border: 1px solid green;
+	display: block;
 }
 .menu-item-description {
+	//border: 1px solid red;
+	display: block;
 	font-style: italic;
+	width: 100%;
 }
