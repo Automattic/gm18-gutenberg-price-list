@@ -13,7 +13,7 @@
     "plugin",
     "javascript"
   ],
-  "author": "Michael Cain, Cátia Kitahara, David (Lenny) Lenehan, Matt Sherman",
+  "author": "Michael Cain, David (Lenny) Lenehan, Matt Sherman",
   "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.1.0",
