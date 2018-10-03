@@ -6,7 +6,7 @@ const {InnerBlocks} = wp.editor;
 registerBlockType("gm18-gutenberg-price-list/price-list-category", {
     title: "Price List Category",
     description: "Price list/restaurant menu category",
-    icon: "admin-site",
+    icon: "portfolio",
     category: "common",
     parent: [ "gm18-gutenberg-price-list/price-list" ],
 

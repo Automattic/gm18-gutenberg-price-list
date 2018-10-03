@@ -5,7 +5,7 @@ const {InnerBlocks, RichText} = wp.editor;
 registerBlockType( "gm18-gutenberg-price-list/price-list", {
     title: "Price List",
     description: "Price list/restaurant menu",
-    icon: "admin-site",
+    icon: "media-text",
     category: "common",
     attributes: {
         name: {

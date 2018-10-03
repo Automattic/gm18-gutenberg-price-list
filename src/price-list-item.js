@@ -8,7 +8,7 @@ import './price-list-item.scss';
 registerBlockType( "gm18-gutenberg-price-list/price-list-item", {
     title: "Price List Item",
     description: "Price list/restaurant menu item",
-    icon: "admin-site",
+    icon: "carrot", // TODO: not working
     category: "common",
     parent: [ "gm18-gutenberg-price-list/price-list-category" ],
 
