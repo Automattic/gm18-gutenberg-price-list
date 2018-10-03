@@ -3,6 +3,8 @@ const {registerBlockType} = wp.blocks;
 const { RichText } = wp.editor;
 const {InnerBlocks} = wp.editor;
 
+import './price-list-category.scss';
+
 registerBlockType("gm18-gutenberg-price-list/price-list-category", {
     title: "Price List Category",
     description: "Price list/restaurant menu category",
@@ -35,9 +37,9 @@ registerBlockType("gm18-gutenberg-price-list/price-list-category", {
 		}
 
         return (
-            <section className="menu-section">
+            <section className="price-list-category">
                 <header>
-					<h3 className="category-name">
+					<h3 className="price-list-category-name">
 						<RichText
 							value={ attributes.categoryName }
 							placeholder={ 'Category Name' }
@@ -47,7 +49,7 @@ registerBlockType("gm18-gutenberg-price-list/price-list-category", {
 						/>
 					</h3>
 
-					<p className="category-description">
+					<p className="price-list-category-description">
 						<RichText
 							value={ attributes.categoryDescription }
 							placeholder={ 'Category Description' }
@@ -71,15 +73,15 @@ registerBlockType("gm18-gutenberg-price-list/price-list-category", {
 
     save( { attributes } ) {
         return (
-            <section>
+            <section className="price-list-category">
                 <header>
-                    <h3 className="category-name">
+                    <h3 className="price-list-category-name">
                         <RichText.Content
                             value={ attributes.categoryName }
                         />
                     </h3>
 
-                    <p className="category-description">
+                    <p className="price-list-category-description">
                         <RichText.Content
                             value={ attributes.categoryDescription }
                         />

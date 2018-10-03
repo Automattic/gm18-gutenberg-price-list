@@ -1,7 +1,6 @@
 const { createElement, Fragment } = wp.element;
 const { RichText } = wp.editor;
 const { registerBlockType } = wp.blocks;
-const { TextControl } = wp.components;
 
 import './price-list-item.scss';
 
@@ -44,9 +43,9 @@ registerBlockType( "gm18-gutenberg-price-list/price-list-item", {
 		}
 
         return (
-            <li className="menu-item">
-				<span className="menu-item-header">
-					<strong className="menu-item-name">
+            <li className="price-list-item">
+				<span className="price-list-item-header">
+					<strong className="price-list-item-name">
 						<RichText
 							value={ attributes.name }
 							placeholder={ 'Item Name' }
@@ -55,7 +54,7 @@ registerBlockType( "gm18-gutenberg-price-list/price-list-item", {
 							onChange={ updatePriceListItemName }
 						/>
 					</strong>
-					<span className="menu-item-price">
+					<span className="price-list-item-price">
 						<RichText
 							value={ attributes.price }
 							placeholder={ '2.00' }
@@ -65,7 +64,7 @@ registerBlockType( "gm18-gutenberg-price-list/price-list-item", {
 						/>
 					</span>
 				</span>
-				<span className="menu-item-description">
+				<span className="price-list-item-description">
 					<RichText
 						value={ attributes.description }
 						placeholder={ 'Item Description' }
@@ -80,16 +79,16 @@ registerBlockType( "gm18-gutenberg-price-list/price-list-item", {
 
     save( { attributes } ) {
 		return (
-			<li className="menu-item">
-				<span className="menu-item-header">
-					<strong className="menu-item-name">
+			<li className="price-list-item">
+				<span className="price-list-item-header">
+					<strong className="price-list-item-name">
 						<RichText.Content value={ attributes.name } />
 					</strong>
-					<span className="menu-item-price">
+					<span className="price-list-item-price">
 						<RichText.Content value={ attributes.price } />
 					</span>
 				</span>
-				<span className="menu-item-description">
+				<span className="price-list-item-description">
 					<RichText.Content value={ attributes.description } />
 				</span>
 			</li>

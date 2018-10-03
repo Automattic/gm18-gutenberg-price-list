@@ -36,9 +36,14 @@ function gm18_gutenberg_price_list_register_block() {
 		gm18_gutenberg_price_list_url( 'dist/index.js' ),
 		array( 'wp-element', 'wp-blocks', 'wp-editor' )
 	);
+	wp_register_style(
+		'gm18-gutenberg-price-list',
+		gm18_gutenberg_price_list_url( 'dist/index.css' )
+	);
 
 	register_block_type( 'gm18-gutenberg-price-list/price-list', array(
-			'editor_script' => 'gm18-gutenberg-price-list',
+		'editor_script' => 'gm18-gutenberg-price-list',
+		'style' => 'gm18-gutenberg-price-list',
 	) );
 
 	//
@@ -49,9 +54,14 @@ function gm18_gutenberg_price_list_register_block() {
 		gm18_gutenberg_price_list_url( 'dist/price-list-category.js' ),
 		array( 'wp-element', 'wp-blocks', 'wp-editor', 'wp-components' )
 	);
+	wp_register_style(
+		'gm18-gutenberg-price-list-category',
+		gm18_gutenberg_price_list_url( 'dist/price-list-category.css' )
+	);
 
 	register_block_type( 'gm18-gutenberg-price-list/price-list-category', array(
 		'editor_script' => 'gm18-gutenberg-price-list-category',
+		'style' => 'gm18-gutenberg-price-list-category',
 	) );
 
 	//

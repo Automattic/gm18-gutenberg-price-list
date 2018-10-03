@@ -2,6 +2,8 @@ const {createElement} = wp.element;
 const {registerBlockType} = wp.blocks;
 const {InnerBlocks, RichText} = wp.editor;
 
+import './price-list.scss';
+
 registerBlockType( "gm18-gutenberg-price-list/price-list", {
     title: "Price List",
     description: "Price list/restaurant menu",
@@ -23,8 +25,8 @@ registerBlockType( "gm18-gutenberg-price-list/price-list", {
         }
 
         return (
-            <section>
-                <h1>
+            <section className="price-list">
+                <h2>
                     <RichText
                         value={ props.attributes.name }
                         placeholder={ 'My Price List' }
@@ -32,7 +34,7 @@ registerBlockType( "gm18-gutenberg-price-list/price-list", {
                         formattingControls={ [] }
                         onChange={ updateNameAttribute }
                     />
-                </h1>
+                </h2>
                 {/* Want to do allowedBlocks={ [] }, but that seems buggy - https://github.com/WordPress/gutenberg/issues/7763 */}
                 <InnerBlocks template={[
                     [ 'gm18-gutenberg-price-list/price-list-category' ],
@@ -45,12 +47,12 @@ registerBlockType( "gm18-gutenberg-price-list/price-list", {
 
     save( props ) {
         return (
-            <section>
-                <h1>
+            <section className="price-list">
+                <h2>
                     <RichText.Content
                         value={ props.attributes.name }
                     />
-                </h1>
+                </h2>
                 <InnerBlocks.Content />
             </section>
         );
