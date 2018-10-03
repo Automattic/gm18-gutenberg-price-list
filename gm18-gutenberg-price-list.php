@@ -4,7 +4,7 @@
  * Plugin URI: https://github.com/Automattic/gm18-gutenberg-price-list
  * Description: Gutenberg price list/restaurant menu
  * Version: 1.0.0
- * Author: Michael Cain, Cátia Kitahara, David (Lenny) Lenehan, Matt Sherman
+ * Author: Michael Cain, David (Lenny) Lenehan, Matt Sherman
  *
  * @package gm18-gutenberg-price-list
  */
