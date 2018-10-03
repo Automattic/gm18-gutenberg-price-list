@@ -37,7 +37,6 @@ registerBlockType("gm18-gutenberg-price-list/price-list-category", {
         return (
             <section className="menu-section">
                 <header>
-
 					<h3 className="category-name">
 						<RichText
 							value={ attributes.categoryName }
@@ -70,12 +69,21 @@ registerBlockType("gm18-gutenberg-price-list/price-list-category", {
         );
     },
 
-    save() {
+    save( { attributes } ) {
         return (
             <section>
                 <header>
-                    <h2>TODO: Category Name save markup goes here</h2>
-                    <p>Category description goes here</p>
+                    <h3 className="category-name">
+                        <RichText.Content
+                            value={ attributes.categoryName }
+                        />
+                    </h3>
+
+                    <p className="category-description">
+                        <RichText.Content
+                            value={ attributes.categoryDescription }
+                        />
+                    </p>
                 </header>
                 <ul>
                     <InnerBlocks.Content />
