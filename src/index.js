@@ -37,7 +37,6 @@ registerBlockType( "gm18-gutenberg-price-list/price-list", {
                 <InnerBlocks template={[
                     [ 'gm18-gutenberg-price-list/price-list-category' ],
                     [ 'gm18-gutenberg-price-list/price-list-category' ],
-                    [ 'gm18-gutenberg-price-list/price-list-category' ],
                 ]} />
             </section>
         );
