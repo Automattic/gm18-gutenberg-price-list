@@ -13,7 +13,7 @@ registerBlockType( "gm18-gutenberg-price-list/price-list", {
         name: {
             type: 'string',
             source: 'children',
-            selector: 'h1',
+            selector: 'h2',
         }
     },
 
