@@ -59,7 +59,7 @@ registerBlockType("gm18-gutenberg-price-list/price-list-category", {
 						/>
 					</p>
                 </header>
-				<ul>
+				<ul className="price-list-items">
                     {/* Want to do allowedBlocks={ [] }, but that seems buggy - https://github.com/WordPress/gutenberg/issues/7763 */}
                     <InnerBlocks template={[
                         [ 'gm18-gutenberg-price-list/price-list-item' ],
@@ -74,19 +74,23 @@ registerBlockType("gm18-gutenberg-price-list/price-list-category", {
         return (
             <section className="price-list-category">
                 <header>
-                    <h3 className="price-list-category-name">
-                        <RichText.Content
-                            value={ attributes.categoryName }
-                        />
-                    </h3>
+					{ attributes.categoryName && (
+						<h3 className="price-list-category-name">
+							<RichText.Content
+								value={ attributes.categoryName }
+							/>
+						</h3>
+					) }
 
-                    <p className="price-list-category-description">
-                        <RichText.Content
-                            value={ attributes.categoryDescription }
-                        />
-                    </p>
+					{ attributes.categoryDescription && (
+						<p className="price-list-category-description">
+							<RichText.Content
+								value={ attributes.categoryDescription }
+							/>
+						</p>
+					) }
                 </header>
-                <ul>
+                <ul className="price-list-items">
                     <InnerBlocks.Content />
                 </ul>
             </section>

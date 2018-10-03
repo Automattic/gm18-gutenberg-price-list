@@ -81,16 +81,22 @@ registerBlockType( "gm18-gutenberg-price-list/price-list-item", {
 		return (
 			<li className="price-list-item">
 				<span className="price-list-item-header">
-					<strong className="price-list-item-name">
-						<RichText.Content value={ attributes.name } />
-					</strong>
-					<span className="price-list-item-price">
-						<RichText.Content value={ attributes.price } />
+					{ attributes.name && (
+						<strong className="price-list-item-name">
+							<RichText.Content value={ attributes.name } />
+						</strong>
+					) }
+					{ attributes.price && (
+						<span className="price-list-item-price">
+							<RichText.Content value={ attributes.price } />
+						</span>
+					) }
+				</span>
+				{ attributes.description && (
+					<span className="price-list-item-description">
+						<RichText.Content value={ attributes.description } />
 					</span>
-				</span>
-				<span className="price-list-item-description">
-					<RichText.Content value={ attributes.description } />
-				</span>
+				) }
 			</li>
 		);
     },

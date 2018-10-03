@@ -1,3 +1,13 @@
-.price-list-category {
-	background: red;
+.editor-block-list__layout,
+.entry-content {
+	.price-list-category-name,
+	.price-list-category-description {
+		text-align: center;
+	}
+
+	.price-list-items {
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+	}
 }

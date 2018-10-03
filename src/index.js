@@ -29,7 +29,7 @@ registerBlockType( "gm18-gutenberg-price-list/price-list", {
                 <h2>
                     <RichText
                         value={ props.attributes.name }
-                        placeholder={ 'My Price List' }
+                        placeholder={ 'List Name' }
                         keepPlaceholderOnFocus={ true }
                         formattingControls={ [] }
                         onChange={ updateNameAttribute }
@@ -38,6 +38,7 @@ registerBlockType( "gm18-gutenberg-price-list/price-list", {
                 {/* Want to do allowedBlocks={ [] }, but that seems buggy - https://github.com/WordPress/gutenberg/issues/7763 */}
                 <InnerBlocks template={[
                     [ 'gm18-gutenberg-price-list/price-list-category' ],
+					[ 'core/separator' ],
                     [ 'gm18-gutenberg-price-list/price-list-category' ],
                 ]} />
             </section>
@@ -47,11 +48,13 @@ registerBlockType( "gm18-gutenberg-price-list/price-list", {
     save( props ) {
         return (
             <section className="price-list">
-                <h2>
-                    <RichText.Content
-                        value={ props.attributes.name }
-                    />
-                </h2>
+				{ props.attributes.name && (
+					<h2>
+						<RichText.Content
+							value={ props.attributes.name }
+						/>
+					</h2>
+				) }
                 <InnerBlocks.Content />
             </section>
         );
